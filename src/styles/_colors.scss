@@ -1,0 +1,12 @@
+$primary-color: #000;
+$primary-accent: #6200ff;
+
+$neutral-bg: #fff;
+$low-contrast-bg: #efefef;
+$high-contrast-bg: #111;
+
+// Check accessibility with https://webaim.org/resources/contrastchecker/
+// Background is $neutral-bg
+$high-contrast-text: #000;
+$medium-contrast-text: #4F4F4F;
+$low-contrast-text: #949494;
