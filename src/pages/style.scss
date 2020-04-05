@@ -1,7 +1,11 @@
 @import "../styles/base.scss";
 
 $spacerHeight: $navBarHeight + 2 * $padding;
-s .navBarSpacer {
+.navBarSpacer {
+  height: $spacerHeight;
+}
+
+.spacer {
   height: $spacerHeight;
 }
 
@@ -16,6 +20,30 @@ s .navBarSpacer {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+}
+
+.bio {
+  padding: $spacerHeight $padding;
+  background-color: $neutral-bg;
+  font-size: 1.1em;
+  line-height: 2em;
+  border-top: 1px solid $medium-contrast-bg;
+  vertical-align: middle;
+  text-align: center;
+
+  .avatar {
+    max-width: 50%;
+    max-height: 150px;
+  }
+
+  .thirds {
+    vertical-align: middle;
+  }
+}
+
+.page {
+  padding: $spacerHeight $padding;
+  background-color: $low-contrast-bg;
 }
 
 @media screen and (max-width: $mediumPageWidth) {

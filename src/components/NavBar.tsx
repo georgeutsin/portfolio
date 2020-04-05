@@ -37,8 +37,8 @@ class NavBar extends React.Component<any, any> {
                     <button className="collapseMenu" onClick={this.toggleMenu}>{collapseSVG}</button>
 
                     <div className={this.state.menuOpen ? "navItems open" : "navItems"} id="navItems">
-                        <div className="link"><a href="/projects">Projects</a></div>
-                        <div className="link"><a href="/photos">Photos</a></div>
+                        <a href="/projects"><div className="link">Projects</div></a>
+                        <a href="/photos"><div className="link">Photos</div></a>
                     </div>
                     <div style={{ clear: "both" }}></div>
                 </div>

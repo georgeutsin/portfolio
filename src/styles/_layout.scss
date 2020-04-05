@@ -1,8 +1,9 @@
 $maxPageWidth: 1080px;
 $mediumPageWidth: 768px;
-$maxMobileWidth: 600px;
+$maxMobileWidth: 645px;
 $navBarHeight: 50px;
 $footerHeight: 100px;
+$spacerHeight: 100px;
 $padding: 10px;
 
 .pageWrapper {
@@ -14,4 +15,18 @@ $padding: 10px;
 .icon {
   width: 1em;
   height: 1em;
+}
+
+.thirds {
+  width: calc(33% - 20px);
+  display: inline-block;
+  vertical-align: top;
+  padding: $padding;
+}
+
+@media screen and (max-width: $maxMobileWidth) {
+  .thirds {
+    width: calc(100% - 20px);
+    display: block;
+  }
 }
