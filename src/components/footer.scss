@@ -1,0 +1,13 @@
+@import "../styles/base.scss";
+
+.footer {
+    min-height: $footerHeight;
+    padding: $padding;
+    line-height: 2em;
+    color: $low-contrast-text;
+    border-top: 1px solid $medium-contrast-bg;
+}
+
+.footer .verticalSpacing {
+    height: 50px;
+}

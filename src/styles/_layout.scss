@@ -1,5 +1,6 @@
 $maxPageWidth: 1080px;
 $navBarHeight: 50px;
+$footerHeight: 100px;
 $padding: 10px;
 $maxMobileWidth: 600px;
 
@@ -7,4 +8,9 @@ $maxMobileWidth: 600px;
   width: 100%;
   max-width: $maxPageWidth;
   margin: auto;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
 }
