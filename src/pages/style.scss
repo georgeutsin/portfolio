@@ -1,15 +1,35 @@
 @import "../styles/base.scss";
 
-.navBarSpacer {
-  height: $navBarHeight + 2 * $padding;
+$spacerHeight: $navBarHeight + 2 * $padding;
+s .navBarSpacer {
+  height: $spacerHeight;
 }
+
 .main {
-  height: 520px;
-  background-color: $low-contrast-bg;
-  h1 {
-    color: $primary-accent;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: -2px;
+  height: 100vh;
+  background-color: $neutral-bg;
+  .landing {
+    text-align: center;
+    font-size: 6em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: $mediumPageWidth) {
+  .main {
+    .landing {
+      font-size: 4em;
+    }
+  }
+}
+
+@media screen and (max-width: $maxMobileWidth) {
+  .main {
+    .landing {
+      font-size: 2em;
+    }
   }
 }
