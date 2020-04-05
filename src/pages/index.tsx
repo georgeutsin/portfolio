@@ -1,10 +1,13 @@
 import React from "react"
 import './style.scss'
 import NavBar from "../components/NavBar";
+import Logo from "../components/Logo";
 
 export default () => <div>
     <NavBar></NavBar>
+
     <div className="main">
-        <h1>George Utsin</h1>
+        <div className="navBarSpacer"></div>
+        <Logo fontSize={24}></Logo>
     </div>
 </div>;

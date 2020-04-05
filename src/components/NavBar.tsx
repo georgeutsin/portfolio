@@ -1,4 +1,5 @@
 import React from "react"
+import Logo from "./Logo";
 import './navbar.scss'
 
 // FontAwesome bars icon: https://fontawesome.com/icons/bars
@@ -22,9 +23,16 @@ class NavBar extends React.Component<any, any> {
         super(props);
         this.state = {
             menuOpen: false,
+            hasScrolled: false,
         };
 
         this.toggleMenu = this.toggleMenu.bind(this);
+    }
+
+    public componentDidMount() {
+        window.addEventListener("scroll", () => {
+            this.setState({ hasScrolled: window.scrollY > 0 });
+        });
     }
 
     public toggleMenu() {
@@ -33,18 +41,19 @@ class NavBar extends React.Component<any, any> {
 
     render() {
         return <div>
-            <div className="navBar">
-                <div className="logo">George Utsin</div>
+            <div className={this.state.hasScrolled ? "navBar scrolled" : "navBar"}>
+                <div className="pageWrapper">
+                    <a href="/" className={this.state.hasScrolled ? "navLogo scrolled" : "navLogo"}><Logo /></a>
 
-                <button className="collapseMenu" onClick={this.toggleMenu}>{collapseSVG}</button>
+                    <button className="collapseMenu" onClick={this.toggleMenu}>{collapseSVG}</button>
 
-                <div className={this.state.menuOpen ? "navItems open" : "navItems"} id="navItems">
-                    <div className="link"><a href="/projects">Projects</a></div>
-                    <div className="link"><a href="/photos">Photos</a></div>
+                    <div className={this.state.menuOpen ? "navItems open" : "navItems"} id="navItems">
+                        <div className="link"><a href="/projects">Projects</a></div>
+                        <div className="link"><a href="/photos">Photos</a></div>
+                    </div>
+                    <div style={{ clear: "both" }}></div>
                 </div>
-                <div style={{ clear: "both" }}></div>
             </div>
-            <div className="navSpace"></div>
         </div>;
     }
 }

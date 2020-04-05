@@ -1,66 +1,90 @@
 @import "../styles/base.scss";
 
-$navBarHeight: 50px;
 .navBar {
   color: $high-contrast-text;
-  width: calc(100% - 2 * 10px);
-  padding: 10px;
+  padding: $padding;
   line-height: $navBarHeight;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: calc(100% - 20px);
+  transition: background-color 0.5s ease;
 }
 
-.logo {
+.navBar.scrolled {
+  background-color: $neutral-bg;
+  box-shadow: 0 0 20px -10px #aaa;
+}
+
+.navBar .navLogo {
+  display: none;
+}
+
+.navBar .navLogo.scrolled {
   display: inline-block;
+
+  animation: slidein ease 0.5s;
+  -webkit-animation: slidein ease 0.5s;
+  -moz-animation: slidein ease 0.5s;
+  -o-animation: slidein ease 0.5s;
+  -ms-animation: slidein ease 0.5s;
 }
 
-.navItems {
+.navBar .navItems {
   float: right;
 }
 
-.collapseIcon {
-  width: $navBarHeight - 2*10px;
-  height: $navBarHeight - 2*10px;
+.navBar .collapseIcon {
+  width: $navBarHeight - 2 * $padding;
+  height: $navBarHeight - 2 * $padding;
 }
 
-button {
+.navBar button {
   display: none;
   float: right;
-  background: $neutral-bg;
+  background: transparent;
   height: $navBarHeight;
 }
 
-button:hover {
+.navBar button:hover {
   background: $low-contrast-bg;
 }
 
-a {
+.navBar a {
   text-decoration: none;
   color: $high-contrast-text;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
 }
 
-.link {
-    display: inline-block;
+.navBar .link {
+  display: inline-block;
+  padding: 0 $padding;
 }
 
-.link:hover {
-    background: $low-contrast-bg;
-  }
+.navBar .link:hover {
+  background: $low-contrast-bg;
+}
 
-@media screen and (max-width: 600px) {
-  .navItems {
+@media screen and (max-width: $maxMobileWidth) {
+  .navBar .navItems {
     display: none;
   }
 
-  .navItems.open {
+  .navBar .navItems.open {
     float: none;
     display: block;
     text-align: left;
+    background-color: $neutral-bg;
   }
 
-  button {
+  .navBar button {
     display: block;
   }
 
-  .link {
+  .navBar .link {
     display: block;
-}
+  }
 }
