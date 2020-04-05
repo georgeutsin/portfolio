@@ -10,6 +10,58 @@
   width: calc(100% - 20px);
   transition: background-color 0.5s ease;
   z-index: 10;
+
+  .navLogo {
+    display: none;
+  }
+
+  .navLogo.scrolled {
+    display: inline-block;
+
+    animation: slidein ease 0.5s;
+    -webkit-animation: slidein ease 0.5s;
+    -moz-animation: slidein ease 0.5s;
+    -o-animation: slidein ease 0.5s;
+    -ms-animation: slidein ease 0.5s;
+  }
+
+  .navItems {
+    float: right;
+  }
+
+  .bars {
+    width: $navBarHeight - 2 * $padding;
+    height: $navBarHeight - 2 * $padding;
+  }
+
+  button {
+    display: none;
+    float: right;
+    background: transparent;
+    height: $navBarHeight;
+  }
+
+  button:hover {
+    background: $low-contrast-bg;
+  }
+
+  a {
+    text-decoration: none;
+    color: $high-contrast-text;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1px;
+  }
+
+  .link {
+    display: inline-block;
+    padding: 0 $padding;
+  }
+
+  .link:hover {
+    background: $low-contrast-bg;
+  }
 }
 
 .navBar.scrolled {
@@ -17,75 +69,25 @@
   box-shadow: 0 0 20px -10px #aaa;
 }
 
-.navBar .navLogo {
-  display: none;
-}
-
-.navBar .navLogo.scrolled {
-  display: inline-block;
-
-  animation: slidein ease 0.5s;
-  -webkit-animation: slidein ease 0.5s;
-  -moz-animation: slidein ease 0.5s;
-  -o-animation: slidein ease 0.5s;
-  -ms-animation: slidein ease 0.5s;
-}
-
-.navBar .navItems {
-  float: right;
-}
-
-.navBar .collapseIcon {
-  width: $navBarHeight - 2 * $padding;
-  height: $navBarHeight - 2 * $padding;
-}
-
-.navBar button {
-  display: none;
-  float: right;
-  background: transparent;
-  height: $navBarHeight;
-}
-
-.navBar button:hover {
-  background: $low-contrast-bg;
-}
-
-.navBar a {
-  text-decoration: none;
-  color: $high-contrast-text;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: 1px;
-}
-
-.navBar .link {
-  display: inline-block;
-  padding: 0 $padding;
-}
-
-.navBar .link:hover {
-  background: $low-contrast-bg;
-}
-
 @media screen and (max-width: $maxMobileWidth) {
-  .navBar .navItems {
-    display: none;
-  }
+  .navBar {
+    .navItems {
+      display: none;
+    }
 
-  .navBar .navItems.open {
-    float: none;
-    display: block;
-    text-align: left;
-    background-color: $neutral-bg;
-  }
+    .navItems.open {
+      float: none;
+      display: block;
+      text-align: left;
+      background-color: $neutral-bg;
+    }
 
-  .navBar button {
-    display: block;
-  }
+    button {
+      display: block;
+    }
 
-  .navBar .link {
-    display: block;
+    .link {
+      display: block;
+    }
   }
 }
