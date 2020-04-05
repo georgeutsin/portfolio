@@ -41,9 +41,12 @@ class NavBar extends React.Component<any, any> {
 
     render() {
         return <div>
-            <div className={this.state.hasScrolled ? "navBar scrolled" : "navBar"}>
+            <div className={this.state.hasScrolled || !this.props.isLanding ? "navBar scrolled" : "navBar"}>
                 <div className="pageWrapper">
-                    <a href="/" className={this.state.hasScrolled ? "navLogo scrolled" : "navLogo"}><Logo /></a>
+                    <a href="/"
+                        className={this.state.hasScrolled || !this.props.isLanding ? "navLogo scrolled" : "navLogo"}>
+                        <Logo />
+                    </a>
 
                     <button className="collapseMenu" onClick={this.toggleMenu}>{collapseSVG}</button>
 

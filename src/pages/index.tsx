@@ -4,10 +4,12 @@ import NavBar from "../components/NavBar";
 import Logo from "../components/Logo";
 
 export default () => <div>
-    <NavBar></NavBar>
+    <NavBar isLanding={true}></NavBar>
 
     <div className="main">
         <div className="navBarSpacer"></div>
-        <Logo fontSize={24}></Logo>
+        <div className="pageWrapper">
+            <Logo fontSize={34}></Logo>
+        </div>
     </div>
 </div>;
