@@ -1,7 +1,15 @@
-@import '../styles/base.scss';
+@import "../styles/base.scss";
 
+.navBarSpacer {
+  height: $navBarHeight + 2 * $padding;
+}
 .main {
-    h1 {
-        color: $primary-accent;
-    }
+  height: 2000px;
+  background-color: $low-contrast-bg;
+  h1 {
+    color: $primary-accent;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+  }
 }

@@ -1,0 +1,10 @@
+$maxPageWidth: 1080px;
+$navBarHeight: 50px;
+$padding: 10px;
+$maxMobileWidth: 600px;
+
+.pageWrapper {
+  width: 100%;
+  max-width: $maxPageWidth;
+  margin: auto;
+}
