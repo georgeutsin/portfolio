@@ -27,6 +27,7 @@ export default () => <div>
             <div className="thirds">
                 <img className="avatar" src={avatar}></img>
             </div>
+
             <div className="thirds">
                 Hi my name is George. <br></br>
                 I'm a coder by day and <br></br>
@@ -38,7 +39,6 @@ export default () => <div>
                 <a href="https://github.com/georgeutsin">GitHub</a> <br></br>
                 <a href="https://www.linkedin.com/in/georgeutsin">LinkedIn</a> <br></br>
             </div>
-
         </div>
     </div>
 
