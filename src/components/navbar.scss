@@ -9,6 +9,7 @@
   top: 0;
   width: calc(100% - 20px);
   transition: background-color 0.5s ease;
+  z-index: 10;
 }
 
 .navBar.scrolled {
