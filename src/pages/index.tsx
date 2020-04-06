@@ -42,9 +42,34 @@ export default () => <div>
         </div>
     </div>
 
-    <div className="page">
+    <div className="showcase">
         <div className="pageWrapper">
             <h1>Projects</h1>
+            <div>
+            {/* Use flexbox: http://www.lottejackson.com/learning/an-equal-height-grid-using-flexbox */}
+            {/* Use gatsby images https://www.gatsbyjs.org/packages/gatsby-image/ */}
+                <div className="thirds">
+                    <div className="card">
+                        <h2>TagBull</h2>
+                        Crowd consensus for high quality datasets. <br></br>
+                        Site | Source
+                    </div>
+                </div>
+                <div className="thirds">
+                    <div className="card">
+                        <h2>Psycho Taxi</h2>
+                        Highly optimized infinite runner.<br></br>
+                        Site | Source
+                    </div>
+                </div>
+                <div className="thirds">
+                    <div className="card">
+                    <h2>Portfolio</h2>
+                        You're looking at it.<br></br>
+                        Source
+                    </div>
+                </div>
+            </div>
             <h1>Photos</h1>
         </div>
     </div>
