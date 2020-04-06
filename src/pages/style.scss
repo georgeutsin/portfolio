@@ -30,6 +30,7 @@ $spacerHeight: $navBarHeight + 2 * $padding;
   border-top: 1px solid $medium-contrast-bg;
   vertical-align: middle;
   text-align: center;
+  color: $medium-contrast-text;
 
   .avatar {
     max-width: 50%;
@@ -51,16 +52,6 @@ $spacerHeight: $navBarHeight + 2 * $padding;
 
   h1:not(:first-child) {
     margin: 50px 0;
-  }
-
-  .card {
-    background-color: $neutral-bg;
-    border-bottom: 1px solid $medium-contrast-bg;
-    padding: $padding;
-    line-height: 1.5em;
-    h2 {
-      margin: 10px 0;
-    }
   }
 }
 
