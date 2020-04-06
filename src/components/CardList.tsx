@@ -1,4 +1,6 @@
 import React from "react"
+import Img from "gatsby-image"
+
 import './cardlist.scss'
 
 class CardList extends React.Component<any, any> {
@@ -23,38 +25,24 @@ class CardList extends React.Component<any, any> {
     }
 
     render() {
+        const list = this.props.list.map((e: any) => {
+            const project = e.node.frontmatter;
+            console.log(project);
+            return <li className="cardWrapper" key={project.title}>
+                <div className="card">
+                    {project.image && <Img fluid={project.image.childImageSharp.fluid} />}
+                    <h2>{project.title}</h2>
+                    {project.short_desc}
+                    <div className="links">
+                        {project.site !== "" && <a href={project.site}>Site</a>}
+                        {project.source !== "" && <a href={project.source}>Source</a>}
+                    </div>
+                </div>
+            </li>;
+        });
         return <ul className="cardList">
-        {/* Use gatsby images https://www.gatsbyjs.org/packages/gatsby-image/ */}
-        <li className="cardWrapper">
-            <div className="card">
-                <h2>TagBull</h2>
-                Crowd consensus for high quality datasets.
-                <div className="links">
-                    <a href="https://tagbull.com/">Site</a>|
-                    <a href="https://github.com/georgeutsin/tagbull">Source</a> 
-                </div>
-            </div>
-        </li>
-        <li className="cardWrapper">
-            <div className="card">
-                <h2>Psycho Taxi</h2>
-                Yet another infinite runner for iOS and Android.
-                <div className="links">
-                    <a href="https://psychotaxi.com/">Site</a>|
-                    <a href="https://github.com/georgeutsin/psychotaxi">Source</a> 
-                </div>
-            </div>
-        </li>
-        <li className="cardWrapper">
-            <div className="card">
-                <h2>Portfolio</h2>
-                You're looking at it.
-                <div className="links">
-                    <a href="https://github.com/georgeutsin/portfolio">Source</a>
-                </div>
-            </div>
-        </li>
-    </ul>;
+            {list}
+        </ul>;
     }
 }
 
