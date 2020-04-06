@@ -27,7 +27,6 @@ class CardList extends React.Component<any, any> {
     render() {
         const list = this.props.list.map((e: any) => {
             const project = e.node.frontmatter;
-            console.log(project);
             return <li className="cardWrapper" key={project.title}>
                 <div className="card">
                     {project.image && <Img fluid={project.image.childImageSharp.fluid} />}

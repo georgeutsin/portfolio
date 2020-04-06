@@ -11,7 +11,6 @@ import "./style.scss";
 import CardList from "../components/CardList";
 
 export default (props: any) => {
-    console.log(props.data);
     return <div>
         <NavBar isLanding={true}></NavBar>
 
@@ -34,9 +33,9 @@ export default (props: any) => {
 
                 <div className="thirds">
                     Hi my name is George. <br></br>
-                I'm a coder by day and <br></br>
-                not coding by night.
-            </div>
+                    I'm a coder by day and <br></br>
+                    not coding by night.
+                </div>
 
                 <div className="thirds">
                     <a href={resume}>Resume</a><br></br>
