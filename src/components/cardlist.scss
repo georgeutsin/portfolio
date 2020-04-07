@@ -8,7 +8,8 @@
 
 .cardWrapper {
   padding: $padding;
-  flex: 1 0;
+  padding-bottom: 30px;
+  flex: 1 1 30%;
 }
 
 .card {
@@ -35,6 +36,11 @@
       margin: 0 10px;
       border-left: 1px solid $medium-contrast-bg;
     }
+  }
+
+  .more {
+    color: $low-contrast-text;
+    font-size: 2em;
   }
 }
 

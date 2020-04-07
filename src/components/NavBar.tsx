@@ -17,7 +17,10 @@ class NavBar extends React.Component<any, any> {
 
     public componentDidMount() {
         window.addEventListener("scroll", () => {
-            this.setState({ hasScrolled: window.scrollY > 0 });
+            const hasScrolled = window.scrollY > 0;
+            if (this.state.hasScrolled !== hasScrolled) {
+                this.setState({ hasScrolled });
+            }
         });
     }
 
