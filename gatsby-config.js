@@ -33,5 +33,15 @@ module.exports = {
         user_id: process.env.FLICKR_USER_ID
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `montserrat\:400,700,900`,
+          `open sans`
+        ],
+        display: 'swap'
+      }
+    },
   ],
 }
