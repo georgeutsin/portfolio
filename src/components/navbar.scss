@@ -11,13 +11,19 @@
   transition: background-color 0.5s ease;
   z-index: 10;
 
+  .pageWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .navLogo {
-    display: none;
+    flex: 1;
+    opacity: 0;
   }
 
   .navLogo.scrolled {
-    display: inline-block;
-
+    opacity: 1;
     animation: slidein ease 0.5s;
     -webkit-animation: slidein ease 0.5s;
     -moz-animation: slidein ease 0.5s;
@@ -25,18 +31,13 @@
     -ms-animation: slidein ease 0.5s;
   }
 
-  .navItems {
-    float: right;
-  }
-
-  .bars {
+  .collapse {
     width: $navBarHeight - 2 * $padding;
     height: $navBarHeight - 2 * $padding;
   }
 
   button {
     display: none;
-    float: right;
     background: transparent;
     height: $navBarHeight;
   }
@@ -71,19 +72,25 @@
 
 @media screen and (max-width: $maxMobileWidth) {
   .navBar {
+    .pageWrapper {
+      display: block;
+    }
+
     .navItems {
       display: none;
     }
 
     .navItems.open {
-      float: none;
+      width: 100%;
       display: block;
       text-align: left;
       background-color: $neutral-bg;
+      align-self: end;
     }
 
     button {
       display: block;
+      float: right;
     }
 
     .link {
