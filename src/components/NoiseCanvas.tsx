@@ -16,9 +16,6 @@ class NoiseCanvas extends React.Component<any, any> {
         this.ctx = null;
         this.canvasRef = React.createRef<HTMLCanvasElement>();
         this.noise = new Noise();
-
-        window.addEventListener("resize", this.windowResizeListener.bind(this));
-        window.addEventListener("orientationchange", this.windowResizeListener.bind(this));
     }
 
     public windowResizeListener() {
@@ -32,6 +29,9 @@ class NoiseCanvas extends React.Component<any, any> {
     }
 
     public componentDidMount() {
+        window.addEventListener("resize", this.windowResizeListener.bind(this));
+        window.addEventListener("orientationchange", this.windowResizeListener.bind(this));
+
         if (this.canvasRef.current) { // Shouldn't be null, since its declared in the constructor.
             this.ctx = this.canvasRef.current.getContext("2d");
             this.noise.setCtx(this.ctx);
