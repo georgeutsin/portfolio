@@ -9,8 +9,8 @@ class NoiseCanvas extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            canvasHeight: window.innerHeight,
-            canvasWidth: document.body.clientWidth,
+            canvasHeight: 0,
+            canvasWidth: 0,
         };
 
         this.ctx = null;
