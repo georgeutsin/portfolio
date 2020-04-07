@@ -3,7 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-const path = require('path')
+const path = require("path")
 
 module.exports = {
   plugins: [
@@ -24,6 +24,13 @@ module.exports = {
       options: {
         name: `projects`,
         path: `${__dirname}/src/assets/markdown/projects`,
+      },
+    },
+    {
+      resolve: "gatsby-source-flickr",
+      options: {
+        api_key: process.env.FLICKR_API_KEY,
+        user_id: process.env.FLICKR_USER_ID
       },
     },
   ],

@@ -9,6 +9,7 @@ import avatar from "../assets/images/avatar.jpg";
 import resume from "../assets/GeorgeUtsin-Resume.pdf";
 import "./style.scss";
 import CardList from "../components/CardList";
+import PhotoList from "../components/PhotoList";
 
 export default (props: any) => {
     return <div>
@@ -50,6 +51,7 @@ export default (props: any) => {
                 <h1>Projects</h1>
                 <CardList list={props.data.allMarkdownRemark.edges}></CardList>
                 <h1>Photos</h1>
+                <PhotoList list={props.data.allFlickrPhoto.edges}></PhotoList>
             </div>
         </div>
         <Footer></Footer>
@@ -57,7 +59,7 @@ export default (props: any) => {
 }
 
 export const pageQuery = graphql`
-  query Projects {
+  query Index {
     allMarkdownRemark {
       edges {
         node {
@@ -75,6 +77,14 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    allFlickrPhoto (limit: 10) {
+      edges {
+        node {
+          id
+          url_m
         }
       }
     }
