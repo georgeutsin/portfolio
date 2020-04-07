@@ -21,6 +21,7 @@ const SEO = ({ title, description, image, article }: any) => {
     }
     return (
         <Helmet title={seo.title}>
+            <html lang="en" />
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
             {seo.url && <meta property="og:url" content={seo.url} />}

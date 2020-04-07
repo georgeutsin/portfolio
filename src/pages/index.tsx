@@ -31,7 +31,7 @@ export default (props: any) => {
     <div className="bio">
       <div className="pageWrapper">
         <div className="thirds">
-          <img className="avatar" src={avatar}></img>
+          <img className="avatar" src={avatar} alt="George"></img>
         </div>
 
         <div className="thirds">
