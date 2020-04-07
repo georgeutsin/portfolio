@@ -6,12 +6,19 @@
 const path = require("path")
 
 module.exports = {
+  siteMetadata: {
+    title: "George Utsin - Portfolio",
+    description: "Hi my name is George. I'm a coder by day and not coding by night.",
+    url: "https://www.georgeutsin.com", // No trailing slash allowed!
+    image: "/avatar.png", // Path to your image you placed in the 'static' folder
+  },
   plugins: [
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

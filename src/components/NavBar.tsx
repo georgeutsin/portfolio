@@ -42,7 +42,7 @@ class NavBar extends React.Component<any, any> {
                         <Logo />
                     </a>
 
-                    <button className="collapseMenu" onClick={this.toggleMenu}>{collapseSVG}</button>
+                    <button aria-label="toggle menu" onClick={this.toggleMenu}>{collapseSVG}</button>
                     <div className={this.state.menuOpen ? "navItems open" : "navItems"} id="navItems">
                         <a href="/projects"><div className="link">Projects</div></a>
                         <a href="/photos"><div className="link">Photos</div></a>
