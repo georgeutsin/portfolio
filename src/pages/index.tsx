@@ -1,4 +1,5 @@
 import React from "react"
+import SEO from "../components/SEO";
 import NavBar from "../components/NavBar";
 import Logo from "../components/Logo";
 import Footer from "../components/Footer";
@@ -12,50 +13,51 @@ import CardList from "../components/CardList";
 import PhotoList from "../components/PhotoList";
 
 export default (props: any) => {
-    return <div>
-        <NavBar isLanding={true}></NavBar>
+  return <div>
+    <SEO></SEO>
+    <NavBar isLanding={true}></NavBar>
 
-        <div className="main">
-            <NoiseCanvas></NoiseCanvas>
-            <div className="navBarSpacer"></div>
-            <div className="pageWrapper">
-                <div className="landing">
-                    <Logo></Logo>
-                </div>
-            </div>
+    <div className="main">
+      <NoiseCanvas></NoiseCanvas>
+      <div className="navBarSpacer"></div>
+      <div className="pageWrapper">
+        <div className="landing">
+          <Logo></Logo>
+        </div>
+      </div>
 
+    </div>
+
+    <div className="bio">
+      <div className="pageWrapper">
+        <div className="thirds">
+          <img className="avatar" src={avatar} alt="George"></img>
         </div>
 
-        <div className="bio">
-            <div className="pageWrapper">
-                <div className="thirds">
-                    <img className="avatar" src={avatar}></img>
-                </div>
-
-                <div className="thirds">
-                    Hi my name is George. <br></br>
+        <div className="thirds">
+          Hi my name is George. <br></br>
                     I'm a coder by day and <br></br>
                     not coding by night.
                 </div>
 
-                <div className="thirds">
-                    <a href={resume}>Resume</a><br></br>
-                    <a href="https://github.com/georgeutsin">GitHub</a> <br></br>
-                    <a href="https://www.linkedin.com/in/georgeutsin">LinkedIn</a> <br></br>
-                </div>
-            </div>
+        <div className="thirds">
+          <a href={resume}>Resume</a><br></br>
+          <a href="https://github.com/georgeutsin">GitHub</a> <br></br>
+          <a href="https://www.linkedin.com/in/georgeutsin">LinkedIn</a> <br></br>
         </div>
+      </div>
+    </div>
 
-        <div className="showcase">
-            <div className="pageWrapper">
-                <h1>Projects</h1>
-                <CardList list={props.data.allMarkdownRemark.edges}></CardList>
-                <h1>Photos</h1>
-                <PhotoList list={props.data.allFlickrPhoto.edges}></PhotoList>
-            </div>
-        </div>
-        <Footer></Footer>
-    </div>;
+    <div className="showcase">
+      <div className="pageWrapper">
+        <h1>Projects</h1>
+        <CardList list={props.data.allMarkdownRemark.edges}></CardList>
+        <h1>Photos</h1>
+        <PhotoList list={props.data.allFlickrPhoto.edges}></PhotoList>
+      </div>
+    </div>
+    <Footer></Footer>
+  </div>;
 }
 
 export const pageQuery = graphql`
