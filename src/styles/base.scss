@@ -39,3 +39,12 @@ a {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+.loadingWheel {
+  background-image: url("../assets/images/loadingWheel.svg");
+  background-repeat: no-repeat;
+  background-size: 20% 20%;
+  background-position: center center;
+  height: 100%;
+  z-index: 110;
+}

@@ -1,0 +1,72 @@
+@import "../styles/base.scss";
+
+.previewContainer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  .closeBG {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+  }
+
+  button {
+    position: fixed;
+    z-index: 103;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px;
+  }
+
+  .close {
+    top: 0;
+    right: 0;
+    svg {
+        position: absolute;
+        top: 17px;
+        left: 17px;
+    }
+  }
+
+  .next {
+    top: calc(50% - 50px);
+    right: 0;
+    svg {
+        position: absolute;
+        top: 17px;
+        left: 17px;
+    }
+  }
+
+  .prev {
+    top: calc(50% - 50px);
+    left: 0;
+    svg {
+        position: absolute;
+        top: 17px;
+        left: 17px;
+    }
+  }
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    z-index: 102;
+  }
+
+  .loadingWheel {
+    background-size: 100px 100px;
+    z-index: 110;
+  }
+}
