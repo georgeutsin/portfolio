@@ -29,6 +29,7 @@ export const pageQuery = graphql`
         node {
           id
           url_n
+          url_o
         }
       }
     }
