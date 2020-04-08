@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import './cardlist.scss'
 
 export default (props: any) => {
-    const list = props.list.slice(0, 5).map((e: any) => {
+    const list = props.list.map((e: any) => {
         const project = e.node.frontmatter;
         return <li className="cardWrapper" key={project.title}>
             <div className="card">
@@ -21,7 +21,7 @@ export default (props: any) => {
 
     return <ul className="cardList">
         {list}
-        {props.list.length > 5 &&
+        {props.showMore &&
             <li className="cardWrapper" key="more">
                 <a href="projects">
                     <div className="card">

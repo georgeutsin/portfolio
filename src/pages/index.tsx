@@ -13,6 +13,8 @@ import CardList from "../components/CardList";
 import PhotoList from "../components/PhotoList";
 
 export default (props: any) => {
+  const projects = props.data.allMarkdownRemark.edges;
+  const photos = props.data.allFlickrPhoto.edges;
   return <div>
     <SEO></SEO>
     <NavBar isLanding={true}></NavBar>
@@ -51,9 +53,9 @@ export default (props: any) => {
     <div className="showcase">
       <div className="pageWrapper">
         <h1>Projects</h1>
-        <CardList list={props.data.allMarkdownRemark.edges}></CardList>
+        <CardList list={projects.slice(0,5)} showMore={projects.length > 5}></CardList>
         <h1>Photos</h1>
-        <PhotoList list={props.data.allFlickrPhoto.edges}></PhotoList>
+        <PhotoList list={photos.slice(0,10)} showMore={photos.length > 10}></PhotoList>
       </div>
     </div>
     <Footer></Footer>
@@ -82,7 +84,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allFlickrPhoto (limit: 10) {
+    allFlickrPhoto (limit: 11) {
       edges {
         node {
           id
